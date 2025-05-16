@@ -1,0 +1,224 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+/* App.css */
+
+.p-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  margin: 0 !important;
+}
+
+.p-col-12 {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .md\:p-col-3 {
+    width: 25% !important;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background-color: #fff;
+  height: 100%;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card-hover:hover:not(.expanded) {
+  box-shadow: 0 24px 48px rgba(22, 19, 19, 0.15);
+  transform: translateY(10px);
+}
+
+.expanded {
+  position: fixed !important;
+  top: 10px !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  overflow: visible !important;
+  z-index: 1100 !important;
+  background: #fff !important;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.3) !important;
+  cursor: default !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 0 !important;
+}
+
+.product-image {
+  height: 250px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.expanded .product-image,
+.expanded-image {
+  height: auto !important;
+  max-height: 70vh !important;
+  object-fit: contain !important;
+  margin-bottom: 0 !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.p-4 {
+  padding: 1rem !important;
+}
+
+.flex-grow-1 {
+  flex-grow: 1 !important;
+}
+
+.flex {
+  display: flex !important;
+}
+
+.flex-column {
+  flex-direction: column !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+.expanded .p-4 {
+  padding: 2px !important;
+  gap: 2px !important;
+  flex-shrink: 0 !important;
+}
+
+h2.collapsed-title {
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1rem;
+}
+
+.expanded-title {
+  margin-bottom: 2px !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+  font-size: 1.5rem !important;
+  margin-top: 0 !important;
+}
+
+.product-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.expanded-description {
+  margin-bottom: -2px !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+  display: block !important;
+  font-size: 1rem !important;
+  line-height: 1.2 !important;
+  text-align: justify !important;
+}
+
+.text-sm {
+  font-size: 0.875rem !important;
+}
+
+.text-gray-500 {
+  color: #6b7280 !important;
+}
+
+.category-text {
+  margin-bottom: 0.5rem;
+}
+
+.expanded .category-text {
+  margin-bottom: 5px !important;
+  line-height: 1.1 !important;
+}
+
+.text-xl {
+  font-size: 1rem !important;
+}
+
+.font-bold {
+  font-weight: bold !important;
+}
+
+.text-green-600 {
+  color: #16a34a !important;
+}
+
+.price-text {
+  margin-bottom: 0.5rem;
+}
+
+.expanded .price-text {
+  margin-top: 10px !important;
+  margin-bottom: 5px !important;
+  font-size: 1.25rem !important;
+  line-height: 1.1 !important;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  z-index: 1050;
+}
