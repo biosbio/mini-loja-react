@@ -1,84 +1,46 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-/* App.css */
-
+/* Layout base: define a estrutura dos cards na grid */
 .p-grid {
   display: flex !important;
   flex-wrap: wrap !important;
   margin: 0 !important;
 }
 
+/* Garante que cada coluna ocupe 100% da largura em telas pequenas */
 .p-col-12 {
   width: 100% !important;
   max-width: 100% !important;
   box-sizing: border-box;
 }
 
+/* Em telas médias ou maiores, define que cada card ocupa 25% da largura */
 @media (min-width: 768px) {
   .md\:p-col-3 {
     width: 25% !important;
   }
 }
 
+/* Estilo padrão do card: visual básico, bordas arredondadas, sombra leve */
 .card {
   display: flex;
   flex-direction: column;
   border-radius: 0.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   height: 100%;
   cursor: pointer;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+/* Efeito ao passar o mouse sobre o card (quando não está expandido) */
 .card-hover:hover:not(.expanded) {
   box-shadow: 0 24px 48px rgba(22, 19, 19, 0.15);
   transform: translateY(10px);
 }
 
+/* Estilo quando o card é expandido (tela cheia com fundo branco) */
 .expanded {
   position: fixed !important;
-  top: 10px !important;
+  top: 0 !important;
   left: 0 !important;
   width: 100vw !important;
   height: 100vh !important;
@@ -92,31 +54,38 @@
   padding: 0 !important;
 }
 
+/* Imagem padrão dentro do card */
 .product-image {
   height: 250px;
   object-fit: contain;
   width: 100%;
 }
 
+/* Imagem quando o card está expandido: ocupa até 70% da tela vertical */
 .expanded .product-image,
 .expanded-image {
   height: auto !important;
   max-height: 70vh !important;
   object-fit: contain !important;
-  margin-bottom: 0 !important;
+  margin-top: 10px !important;
   width: 100% !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
+/* Espaçamento interno padrão */
 .p-4 {
   padding: 1rem !important;
 }
 
-.flex-grow-1 {
-  flex-grow: 1 !important;
+/* Espaçamento interno ajustado quando expandido */
+.expanded .p-4 {
+  padding: 1rem !important;
+  gap: 0.5rem !important;
+  flex-shrink: 0 !important;
 }
 
+/* Utilitários de layout flexível */
 .flex {
   display: flex !important;
 }
@@ -125,16 +94,15 @@
   flex-direction: column !important;
 }
 
+.flex-grow-1 {
+  flex-grow: 1 !important;
+}
+
 .justify-content-between {
   justify-content: space-between !important;
 }
 
-.expanded .p-4 {
-  padding: 2px !important;
-  gap: 2px !important;
-  flex-shrink: 0 !important;
-}
-
+/* Título padrão (resumido, com reticências se muito longo) */
 h2.collapsed-title {
   margin-bottom: 0.5rem;
   white-space: nowrap;
@@ -143,15 +111,18 @@ h2.collapsed-title {
   font-size: 1rem;
 }
 
+/* Título expandido: texto completo, grande e destacado */
 .expanded-title {
-  margin-bottom: 2px !important;
+  margin-top: 0 !important;
+  margin-bottom: -1.75rem !important;
   white-space: normal !important;
   overflow: visible !important;
   text-overflow: unset !important;
-  font-size: 1.5rem !important;
-  margin-top: 0 !important;
+  font-size: 1.75rem !important;
+  font-weight: bold !important;
 }
 
+/* Descrição padrão: texto truncado com 2 linhas */
 .product-description {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -162,34 +133,35 @@ h2.collapsed-title {
   margin-bottom: 0.5rem;
 }
 
+/* Descrição completa ao expandir: leitura fluida e justificada */
 .expanded-description {
-  margin-bottom: -2px !important;
+  margin-bottom: 0px !important;
   white-space: normal !important;
   overflow: visible !important;
   text-overflow: unset !important;
   display: block !important;
   font-size: 1rem !important;
-  line-height: 1.2 !important;
+  line-height: 1.5 !important;
   text-align: justify !important;
 }
 
-.text-sm {
-  font-size: 0.875rem !important;
-}
-
-.text-gray-500 {
-  color: #6b7280 !important;
-}
-
+/* Categoria do produto (texto auxiliar) */
 .category-text {
+  margin-top: -5px !important;
   margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color:rgb(19, 61, 145); 
 }
 
+/* Categoria no card expandido */
 .expanded .category-text {
-  margin-bottom: 5px !important;
+  margin-bottom: 0px !important;
   line-height: 1.1 !important;
+  font-size: 0.875rem !important;
+  color: rgb(19, 61, 145) !important;
 }
 
+/* Estilo de preço em geral */
 .text-xl {
   font-size: 1rem !important;
 }
@@ -199,26 +171,29 @@ h2.collapsed-title {
 }
 
 .text-green-600 {
-  color: #16a34a !important;
+  color: #16a34a !important; /* verde */
 }
 
+/* Preço em cards normais */
 .price-text {
   margin-bottom: 0.5rem;
 }
 
+/* Preço em cards expandidos: mais destaque */
 .expanded .price-text {
-  margin-top: 10px !important;
+  margin-top: 5px !important;
   margin-bottom: 5px !important;
   font-size: 1.25rem !important;
   line-height: 1.1 !important;
 }
 
+/* Overlay de fundo escurecido quando um card está expandido */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: #ffffff;
+  background: rgba(0, 0, 0, 0.4); /* semitransparente */
   z-index: 1050;
 }

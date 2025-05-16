@@ -3,7 +3,7 @@
 // ProductList.jsx
 import React, { useEffect, useState, useRef } from 'react';
 import Api from '../services/Api';
-import './App.css'; 
+import '../components/App.css'
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
