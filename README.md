@@ -33,7 +33,7 @@ mini-loja/
 
 1. **Clone o repositório:**
       ```bash
-      git clone https://github.com/seu-usuario/mini-loja.git
+      git clone https://github.com/biosbio/mini-loja.git
       cd mini-loja
       ```
 
